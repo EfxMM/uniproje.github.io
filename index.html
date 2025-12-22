@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description"
+        content="Cinsel yolla bulaşan enfeksiyonlar (CYBE) hakkında eğitici interaktif oyun ve bilgi platformu">
+    <meta name="keywords" content="CYBE, cinsel sağlık, korunma, eğitim, asepsi, mikrobiyoloji">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0f172a">
+    <title>CYBE Eğitim Oyunu - Sağlıklı Yaşam İçin Bilgilenin</title>
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap&subset=latin-ext"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tabs-simple.css">
+    <link rel="stylesheet" href="css/hero-animations.css">
+    <link rel="stylesheet" href="css/dragon.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/language.css">
+</head>
+
+<body>
+    <!-- Ana Container -->
+    <div id="app" class="app-container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="logo">🏥 CYBE Eğitim</h1>
+                    <div class="header-actions">
+                        <div class="language-selector">
+                            <button class="btn-lang active" data-lang="tr" title="Türkçe">
+                                🇹🇷
+                            </button>
+                            <button class="btn-lang" data-lang="en" title="English">
+                                🇬🇧
+                            </button>
+                        </div>
+                        <button id="themeToggle" class="btn-theme" aria-label="Tema Değiştir" title="Koyu/Açık Mod">
+                            <span class="theme-icon">🌙</span>
+                        </button>
+                        <button id="homeBtn" class="btn-home" aria-label="Ana Sayfaya Dön">
+                            <span>🏠</span> Ana Sayfa
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+
+                <!-- Ana Sayfa Section -->
+                <section id="homePage" class="page active">
+                    <!-- Giriş Bölümü -->
+                    <div class="hero-modern">
+                        <!-- Görsel Efekt -->
+                        <div class="sleeping-dragon">
+                            <svg class="dragon-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Gövde -->
+                                <path class="dragon-body" d="M 30 100 Q 50 80, 70 100 T 110 100 T 150 100 T 190 100"
+                                    stroke="url(#dragonGradient)" stroke-width="8" fill="none" stroke-linecap="round" />
+                                <path class="dragon-body-2" d="M 30 100 Q 50 120, 70 100 T 110 100 T 150 100 T 190 100"
+                                    stroke="url(#dragonGradient2)" stroke-width="8" fill="none"
+                                    stroke-linecap="round" />
+
+                                <!-- Baş -->
+                                <circle class="dragon-head" cx="25" cy="100" r="15" fill="url(#dragonGradient)" />
+                                <circle class="dragon-eye dragon-eye-1" cx="22" cy="97" r="3" fill="white"
+                                    opacity="0.3" />
+                                <circle class="dragon-eye dragon-eye-2" cx="28" cy="97" r="3" fill="white"
+                                    opacity="0.3" />
+
+                                <!-- Parıltılar -->
+                                <circle class="sparkle sparkle-1" cx="45" cy="75" r="2" fill="#06b6d4" opacity="0" />
+                                <circle class="sparkle sparkle-2" cx="75" cy="90" r="1.5" fill="#6366f1" opacity="0" />
+                                <circle class="sparkle sparkle-3" cx="95" cy="70" r="2" fill="#06b6d4" opacity="0" />
+                                <circle class="sparkle sparkle-4" cx="115" cy="110" r="1.5" fill="#6366f1"
+                                    opacity="0" />
+                                <circle class="sparkle sparkle-5" cx="135" cy="80" r="2" fill="#06b6d4" opacity="0" />
+                                <circle class="sparkle sparkle-6" cx="155" cy="100" r="1.5" fill="#6366f1"
+                                    opacity="0" />
+                                <circle class="sparkle sparkle-7" cx="175" cy="85" r="2" fill="#06b6d4" opacity="0" />
+                                <circle class="sparkle sparkle-8" cx="55" cy="120" r="1.5" fill="#6366f1" opacity="0" />
+                                <circle class="sparkle sparkle-9" cx="105" cy="125" r="2" fill="#06b6d4" opacity="0" />
+                                <circle class="sparkle sparkle-10" cx="145" cy="115" r="1.5" fill="#6366f1"
+                                    opacity="0" />
+                                <circle class="sparkle sparkle-11" cx="65" cy="65" r="2" fill="#06b6d4" opacity="0" />
+                                <circle class="sparkle sparkle-12" cx="125" cy="60" r="1.5" fill="#6366f1"
+                                    opacity="0" />
+
+                                <!-- Gradients -->
+                                <defs>
+                                    <linearGradient id="dragonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+                                    </linearGradient>
+                                    <linearGradient id="dragonGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.6" />
+                                        <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0.6" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+
+                        <div class="hero-content">
+                            <div class="hero-label">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="2" fill="none" />
+                                    <path d="M8 4V8L11 11" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                                <span>Bilimsel Sağlık Eğitimi</span>
+                            </div>
+                            <h1 class="hero-main-title">
+                                Sağlıklı Yaşam İçin<br>
+                                <span class="gradient-text">Kapsamlı Eğitim</span>
+                            </h1>
+                            <p class="hero-subtitle">
+                                Cinsel yolla bulaşan enfeksiyonlar (CYBE) hakkında bilimsel ve güncel bilgiler edinin.
+                                Testler, gerçek senaryolar ve detaylı içeriklerle kendinizi geliştirin.
+                            </p>
+                            <div class="hero-cta">
+                                <button class="cta-primary" data-page="info">
+                                    <span>Eğitime Başla</span>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <button class="cta-secondary" data-page="quiz">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    <span>Bilgi Testi</span>
+                                </button>
+                            </div>
+                            <div class="hero-stats-modern">
+                                <div class="stat-item-modern">
+                                    <div class="stat-icon">📚</div>
+                                    <div class="stat-content">
+                                        <strong>10+</strong>
+                                        <span>CYBE Türü</span>
+                                    </div>
+                                </div>
+                                <div class="stat-divider"></div>
+                                <div class="stat-item-modern">
+                                    <div class="stat-icon">🎯</div>
+                                    <div class="stat-content">
+                                        <strong>15+</strong>
+                                        <span>Test Sorusu</span>
+                                    </div>
+                                </div>
+                                <div class="stat-divider"></div>
+                                <div class="stat-item-modern">
+                                    <div class="stat-icon">🎭</div>
+                                    <div class="stat-content">
+                                        <strong>10</strong>
+                                        <span>Senaryo</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-visual-modern">
+                            <div class="floating-card card-1">
+                                <div class="card-glow"></div>
+                                <div class="card-content-modern">
+                                    <div class="card-icon-modern">🧬</div>
+                                    <h4>Bilimsel İçerik</h4>
+                                    <p>Güncel tıbbi bilgiler ve araştırmalar</p>
+                                </div>
+                            </div>
+                            <div class="floating-card card-2">
+                                <div class="card-glow"></div>
+                                <div class="card-content-modern">
+                                    <div class="card-icon-modern">🎯</div>
+                                    <h4>Testler</h4>
+                                    <p>Bilginizi ölçün ve geliştirin</p>
+                                </div>
+                            </div>
+                            <div class="floating-card card-3">
+                                <div class="card-glow"></div>
+                                <div class="card-content-modern">
+                                    <div class="card-icon-modern">🛡️</div>
+                                    <h4>Korunma Rehberi</h4>
+                                    <p>Pratik öneriler ve stratejiler</p>
+                                </div>
+                            </div>
+                            <div class="hero-decoration decoration-1"></div>
+                            <div class="hero-decoration decoration-2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Özellikler Grid -->
+                    <div class="features-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Neler Öğreneceksiniz?</h2>
+                            <p class="section-description">Kapsamlı eğitim modülleri ile sağlık bilginizi artırın</p>
+                        </div>
+
+                        <div class="features-grid">
+                            <div class="feature-card" data-page="info">
+                                <div class="feature-icon-wrapper">
+                                    <div class="feature-icon">📚</div>
+                                </div>
+                                <h3 class="feature-title">Bilgi Merkezi</h3>
+                                <p class="feature-description">10 farklı CYBE türü hakkında detaylı bilgiler,
+                                    belirtiler, bulaşma yolları ve korunma stratejileri</p>
+                                <ul class="feature-list">
+                                    <li>HIV/AIDS bilgileri</li>
+                                    <li>HPV ve aşılama</li>
+                                    <li>Hepatit B korunması</li>
+                                    <li>Diğer enfeksiyonlar</li>
+                                </ul>
+                                <button class="feature-btn">
+                                    <span>Keşfet</span>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="feature-card" data-page="quiz">
+                                <div class="feature-icon-wrapper">
+                                    <div class="feature-icon">🎯</div>
+                                </div>
+                                <h3 class="feature-title">Bilgi Testi</h3>
+                                <p class="feature-description">15+ soru ile bilginizi test edin, anında geri bildirim
+                                    alın ve öğrenme sürecinizi takip edin</p>
+                                <ul class="feature-list">
+                                    <li>Çoktan seçmeli sorular</li>
+                                    <li>Anında geri bildirim</li>
+                                    <li>Detaylı açıklamalar</li>
+                                    <li>Puan sistemi</li>
+                                </ul>
+                                <button class="feature-btn">
+                                    <span>Teste Başla</span>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="feature-card" data-page="scenarios">
+                                <div class="feature-icon-wrapper">
+                                    <div class="feature-icon">🎭</div>
+                                </div>
+                                <h3 class="feature-title">Gerçek Senaryolar</h3>
+                                <p class="feature-description">10 gerçek hayat durumu ile karşılaşın, kararlar alın ve
+                                    sonuçlarını görün</p>
+                                <ul class="feature-list">
+                                    <li>Günlük hayat durumları</li>
+                                    <li>Karar verme pratiği</li>
+                                    <li>Sonuç analizi</li>
+                                    <li>Öğretici geri bildirim</li>
+                                </ul>
+                                <button class="feature-btn">
+                                    <span>Senaryolara Git</span>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="feature-card" data-page="timeline">
+                                <div class="feature-icon-wrapper">
+                                    <div class="feature-icon">⏱️</div>
+                                </div>
+                                <h3 class="feature-title">Zaman Çizelgesi</h3>
+                                <p class="feature-description">CYBE'lerin vücuttaki gelişim sürecini zaman çizelgesi ile
+                                    görselleştirin</p>
+                                <ul class="feature-list">
+                                    <li>Hastalık evreleri</li>
+                                    <li>Belirtilerin ortaya çıkışı</li>
+                                    <li>Tedavi süreçleri</li>
+                                    <li>İnteraktif görselleştirme</li>
+                                </ul>
+                                <button class="feature-btn">
+                                    <span>Keşfet</span>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="feature-card" data-page="progress">
+                                <div class="feature-icon-wrapper">
+                                    <div class="feature-icon">📊</div>
+                                </div>
+                                <h3 class="feature-title">İlerleme Takibi</h3>
+                                <p class="feature-description">Öğrenme yolculuğunuzu takip edin, rozetler kazanın ve
+                                    başarılarınızı görün</p>
+                                <ul class="feature-list">
+                                    <li>6 farklı rozet</li>
+                                    <li>Detaylı istatistikler</li>
+                                    <li>Başarı grafikleri</li>
+                                    <li>Motivasyon sistemi</li>
+                                </ul>
+                                <button class="feature-btn">
+                                    <span>İlerlememi Gör</span>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- Bilgi Sayfası -->
+                <section id="infoPage" class="page">
+                    <h2 class="page-title">Bilgi Merkezi</h2>
+
+                    <!-- Sekme Navigasyonu -->
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="cybe">CYBE Türleri</button>
+                        <button class="tab-btn" data-tab="protection">Korunma</button>
+                        <button class="tab-btn" data-tab="handwash">El Yıkama</button>
+                    </div>
+
+                    <!-- Sekme İçerikleri -->
+                    <div class="tab-content active" id="cybeTab"></div>
+                    <div class="tab-content" id="protectionTab"></div>
+                    <div class="tab-content" id="handwashTab"></div>
+                </section>
+
+                <!-- Quiz Sayfası -->
+                <section id="quizPage" class="page">
+                    <div id="quizStart" class="quiz-start">
+                        <h2 class="page-title">Bilgi Testi</h2>
+                        <p class="quiz-intro">15 soruluk testimizle bilginizi ölçün. Her doğru cevap için puan kazanın!
+                        </p>
+                        <button id="startQuizBtn" class="btn btn-large btn-primary">Teste Başla</button>
+                    </div>
+
+                    <div id="quizGame" class="quiz-game hidden">
+                        <div class="quiz-header">
+                            <div class="quiz-progress">
+                                <span id="currentQuestion">1</span> / <span id="totalQuestions">15</span>
+                            </div>
+                            <div class="quiz-score">
+                                Puan: <span id="currentScore">0</span>
+                            </div>
+                        </div>
+
+                        <div class="question-card">
+                            <h3 id="questionText" class="question-text"></h3>
+                            <div id="optionsContainer" class="options-container"></div>
+                        </div>
+
+                        <div id="feedback" class="feedback hidden"></div>
+
+                        <div class="quiz-navigation">
+                            <button id="prevQuestionBtn" class="btn btn-secondary" style="display:none;">
+                                ← Önceki Soru
+                            </button>
+                            <button id="nextQuestionBtn" class="btn btn-primary" style="display:none;">
+                                Sonraki Soru →
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="quizResults" class="quiz-results hidden">
+                        <h2 class="results-title">Test Tamamlandı! 🎉</h2>
+                        <div class="results-stats">
+                            <div class="result-item">
+                                <span class="result-label">Toplam Puan</span>
+                                <span id="finalScore" class="result-value">0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Doğru Cevap</span>
+                                <span id="correctCount" class="result-value">0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Yanlış Cevap</span>
+                                <span id="wrongCount" class="result-value">0</span>
+                            </div>
+                        </div>
+                        <div class="results-actions">
+                            <button id="retryQuizBtn" class="btn btn-primary">Tekrar Dene</button>
+                            <button id="homeFromQuizBtn" class="btn btn-secondary">Ana Sayfa</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Senaryolar Sayfası -->
+                <section id="scenariosPage" class="page">
+                    <h2 class="page-title">Senaryolar</h2>
+                    <div id="scenarioSelection" class="scenario-selection"></div>
+                    <div id="scenarioGame" class="scenario-game hidden"></div>
+                </section>
+
+                <!-- İlerleme Sayfası -->
+                <section id="progressPage" class="page">
+                    <h2 class="page-title">İlerleme ve Başarılar</h2>
+                    <div id="progressContent" class="progress-content"></div>
+                </section>
+
+                <!-- Zaman Çizelgesi Sayfası -->
+                <section id="timelinePage" class="page">
+                    <h2 class="page-title">⏱️ CYBE Zaman Çizelgesi</h2>
+                    <p
+                        style="text-align: center; color: var(--color-text-light); max-width: 800px; margin: 0 auto var(--spacing-xl); font-size: 1.125rem; line-height: 1.7;">
+                        Bir CYBE'nin vücuttaki yolculuğunu keşfedin. Her hastalığın farklı bir zaman çizelgesi vardır.
+                    </p>
+
+                    <div class="timeline-selector">
+                        <label for="diseaseSelect">
+                            📋 Hastalık Seçin:
+                        </label>
+                        <select id="diseaseSelect" class="disease-select">
+                            <option value="">-- Bir hastalık seçin --</option>
+                        </select>
+                    </div>
+
+                    <div id="timelineContent" class="timeline-content">
+                        <div class="timeline-empty">
+                            <div class="timeline-empty-icon">⏱️</div>
+                            <p>Yukarıdan bir hastalık seçerek zaman çizelgesini görüntüleyin</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>Acil Durum</h4>
+                        <p>ALO 183 - Sağlık Bakanlığı Danışma Hattı</p>
+                        <p>ALO 184 - Aile, Çalışma ve Sosyal Hizmetler Bakanlığı</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Güvenilir Kaynaklar</h4>
+                        <ul class="footer-links">
+                            <li><a href="https://www.who.int/health-topics/sexually-transmitted-infections"
+                                    target="_blank" rel="noopener noreferrer">Dünya Sağlık Örgütü</a></li>
+                            <li><a href="https://www.saglik.gov.tr" target="_blank" rel="noopener noreferrer">T.C.
+                                    Sağlık Bakanlığı</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Gizlilik</h4>
+                        <p>Tüm verileriniz cihazınızda güvenle saklanır. Kişisel bilgileriniz paylaşılmaz.</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>CYBE Eğitim Oyunu</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/translations.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/scenarios.js"></script>
+    <script src="js/timeline.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

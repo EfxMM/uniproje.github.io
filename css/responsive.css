@@ -1,0 +1,2052 @@
+/* ==========================================
+   Responsive Design - Mobile First Approach
+   ========================================== */
+
+/* Touch-friendly global styles */
+* {
+    -webkit-tap-highlight-color: rgba(99, 102, 241, 0.15);
+}
+
+button, a, .btn, .nav-card, .floating-card {
+    -webkit-tap-highlight-color: rgba(99, 102, 241, 0.2);
+    touch-action: manipulation;
+}
+
+/* Küçük ekranlar için font optimizasyonu */
+@media (max-width: 480px) {
+    html {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+}
+
+/* ==========================================
+   Tablet (768px - 1024px)
+   ========================================== */
+@media (max-width: 1024px) {
+    :root {
+        --spacing-xl: 32px;
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.25rem; }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-stats {
+        gap: var(--spacing-md);
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==========================================
+   Mobile (320px - 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    :root {
+        --spacing-lg: 24px;
+        --spacing-xl: 24px;
+    }
+
+    html {
+        font-size: 14px;
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .app-container {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .main-content {
+        overflow-x: hidden;
+        width: 100%;
+        padding: var(--spacing-md) 0;
+    }
+
+    .container {
+        padding: 0 12px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Tüm page'ler */
+    .page {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    /* Header */
+    .header {
+        padding: 14px 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .header-content {
+        padding: 0 12px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .logo {
+        font-size: 1.125rem;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .logo span {
+        font-size: 1.25rem;
+    }
+
+    .header-actions {
+        gap: 10px;
+    }
+
+    .btn-theme {
+        width: 40px;
+        height: 40px;
+    }
+
+    .theme-icon {
+        font-size: 1.1rem;
+    }
+
+    .btn-home {
+        padding: 8px 16px;
+        font-size: 0.875rem;
+    }
+
+    .btn-home span:last-child {
+        display: none;
+    }
+
+    .btn-home span:first-child {
+        font-size: 1.2rem;
+    }
+
+    .header.scrolled {
+        padding: 12px 0;
+    }
+
+    /* Hero */
+    .hero {
+        padding: var(--spacing-md) 0;
+        width: 100%;
+        overflow-x: hidden;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .hero-modern {
+        width: 100%;
+        overflow-x: hidden;
+        padding: 2.5rem 12px 2rem;
+        box-sizing: border-box;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    /* Navigation Cards */
+    .nav-cards {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .nav-card {
+        padding: var(--spacing-md);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .card-icon {
+        font-size: 2.5rem;
+    }
+
+    /* Quick Stats */
+    .quick-stats {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md);
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    /* Tabs */
+    .tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tab-btn {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.875rem;
+    }
+
+    /* Info Grid */
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .info-card {
+        padding: var(--spacing-md);
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .info-card h4 {
+        font-size: 1.125rem;
+    }
+
+    .info-card h5 {
+        font-size: 0.9375rem;
+    }
+
+    .info-card ul {
+        font-size: 0.9rem;
+    }
+
+    /* Page title mobilde */
+    .page-title {
+        font-size: 1.75rem;
+        padding: 0 var(--spacing-sm);
+        line-height: 1.3;
+    }
+
+    /* Quiz */
+    .quiz-start {
+        padding: var(--spacing-md);
+    }
+
+    .quiz-header {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        text-align: center;
+    }
+
+    .question-card {
+        padding: var(--spacing-md);
+    }
+
+    .question-text {
+        font-size: 1.125rem;
+    }
+
+    .option-btn {
+        padding: var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+
+    /* Quiz Results */
+    .quiz-results {
+        padding: var(--spacing-md);
+    }
+
+    .results-stats {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .results-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .results-actions .btn {
+        width: 100%;
+    }
+
+    /* Scenarios */
+    .scenario-selection {
+        grid-template-columns: 1fr;
+    }
+
+    .scenario-content {
+        padding: var(--spacing-md);
+    }
+
+    .scenario-situation {
+        font-size: 1rem;
+    }
+
+    .choice-btn {
+        padding: var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+
+    /* Progress */
+    .badges-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .badge {
+        padding: var(--spacing-xs);
+    }
+
+    .badge-icon {
+        font-size: 2rem;
+    }
+
+    .badge-name {
+        font-size: 0.75rem;
+    }
+
+    /* Footer mobilde iyileştirilmiş */
+    .footer {
+        padding: var(--spacing-lg) 0 var(--spacing-md);
+        margin-top: var(--spacing-xl);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        padding: 0 var(--spacing-md);
+    }
+
+    .footer-section {
+        text-align: center;
+        padding: var(--spacing-md);
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: var(--radius-md);
+    }
+
+    .footer-section h4 {
+        font-size: 1.125rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .footer-section p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: var(--spacing-sm) 0 0 0;
+    }
+
+    .footer-links li {
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .footer-links a {
+        font-size: 0.9rem;
+        padding: var(--spacing-xs);
+        display: inline-block;
+        border-radius: var(--radius-sm);
+        transition: all 0.3s ease;
+    }
+
+    .footer-links a:active {
+        background: rgba(255, 255, 255, 0.1);
+        transform: scale(0.98);
+    }
+
+    .footer-bottom {
+        padding: var(--spacing-md) var(--spacing-md) 0;
+        margin-top: var(--spacing-md);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-bottom p {
+        font-size: 0.8rem;
+        margin: 0;
+    }
+
+    /* Progress page mobil düzenlemeleri */
+    .progress-card {
+        padding: var(--spacing-md);
+    }
+
+    .progress-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .progress-card > div[style*="grid-template-columns"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: var(--spacing-sm) !important;
+    }
+
+    .progress-card > div[style*="grid-template-columns"] > div {
+        padding: var(--spacing-sm);
+    }
+
+    .progress-card > div[style*="grid-template-columns"] > div > div:first-child {
+        font-size: 1.5rem !important;
+    }
+
+    /* Scenario outcome mobilde */
+    .scenario-outcome {
+        padding: var(--spacing-md);
+    }
+
+    .scenario-outcome h4 {
+        font-size: 1.125rem;
+    }
+
+    .scenario-outcome p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .scenario-outcome > div[style*="display: flex"] {
+        flex-direction: column;
+    }
+
+    .scenario-outcome button {
+        width: 100%;
+    }
+
+    /* Quiz results mobilde */
+    .quiz-results {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .results-title {
+        font-size: 1.75rem;
+    }
+
+    .results-stats {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-md) !important;
+    }
+
+    .result-item {
+        padding: var(--spacing-md) var(--spacing-sm) !important;
+    }
+
+    .result-value {
+        font-size: 2rem !important;
+    }
+
+    .results-actions {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .results-actions .btn {
+        width: 100%;
+    }
+
+    /* Buttons */
+    .btn {
+        width: 100%;
+        text-align: center;
+        min-height: 44px; /* Touch target için */
+    }
+
+    /* Feature button mobilde */
+    .feature-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-large {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 1rem;
+    }
+
+    /* El Yıkama Bölümü */
+    .handwash-step-card {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-md);
+    }
+
+    .handwash-step-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .step-number-badge {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto;
+    }
+
+    .step-number {
+        font-size: 1.5rem;
+    }
+
+    .tip-card-primary {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tip-icon {
+        font-size: 2.5rem;
+    }
+
+    .when-to-wash-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wash-item {
+        text-align: center;
+    }
+
+    /* El yıkama sayfası - Video container mobilde tam genişlik */
+    .handwash-content-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-lg) !important;
+    }
+
+    .handwash-steps-container {
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* Video container mobilde tek sütun */
+    .video-container {
+        position: relative !important;
+        top: 0 !important;
+        margin-top: 0 !important;
+        order: -1; /* Video üstte görünsün */
+    }
+}
+
+/* ==========================================
+   Small Mobile (320px - 480px)
+   ========================================== */
+@media (max-width: 480px) {
+    html {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .container {
+        padding: 0 10px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .hero-modern {
+        padding: 2rem 10px 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+    }
+
+    .card-title {
+        font-size: 1.125rem;
+    }
+
+    .card-description {
+        font-size: 0.85rem;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
+    .question-text {
+        font-size: 1rem;
+    }
+
+    .badges-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Timeline mobil düzenlemeleri */
+    .timeline-selector {
+        padding: var(--spacing-md);
+    }
+
+    .timeline-stage {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .timeline-stage::before {
+        display: none;
+    }
+
+    .timeline-marker {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .timeline-info {
+        margin-left: 0;
+        padding: var(--spacing-md);
+    }
+
+    .timeline-info h3 {
+        font-size: 1.125rem;
+    }
+
+    .timeline-info h4 {
+        font-size: 0.875rem;
+    }
+
+    .timeline-info ul {
+        font-size: 0.9rem;
+    }
+
+    .info-bubble {
+        margin-left: 0;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-bubble::before {
+        display: none;
+    }
+
+    /* Quiz navigation mobilde dikey */
+    .quiz-navigation {
+        flex-direction: column;
+    }
+
+    .quiz-navigation .btn {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Scenario cards mobilde tek sütun */
+    .scenario-selection {
+        grid-template-columns: 1fr;
+    }
+
+    .scenario-card {
+        padding: var(--spacing-md);
+    }
+
+    .scenario-content {
+        padding: var(--spacing-md);
+    }
+
+    .scenario-situation {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .choice-btn {
+        padding: var(--spacing-md);
+        font-size: 0.9rem;
+        text-align: left;
+    }
+
+    /* Protection tab grid mobilde tek sütun */
+    .protection-hero,
+    .asepsis-hero {
+        padding: var(--spacing-md);
+    }
+
+    .protection-hero h3,
+    .asepsis-hero h3 {
+        font-size: 1.5rem;
+    }
+
+    .protection-hero p,
+    .asepsis-hero p {
+        font-size: 1rem;
+    }
+
+    /* Info intro mobilde */
+    .info-intro {
+        padding: var(--spacing-md);
+    }
+
+    .info-intro h3 {
+        font-size: 1.5rem;
+    }
+
+    .info-intro p {
+        font-size: 1rem;
+    }
+
+    /* Protection tab içindeki grid'ler mobilde tek sütun */
+    .protection-hero + div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Tip card primary mobilde */
+    .tip-card-primary {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-md) !important;
+    }
+
+    .tip-icon {
+        font-size: 2rem !important;
+        margin-bottom: var(--spacing-sm) !important;
+    }
+}
+
+/* ==========================================
+   Landscape Mobile
+   ========================================== */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: var(--spacing-sm) 0;
+    }
+
+    .main-content {
+        padding: var(--spacing-sm) 0;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-stats {
+        flex-direction: row;
+    }
+}
+
+/* ==========================================
+   Large Desktop (1440px+)
+   ========================================== */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-description {
+        font-size: 1.25rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ==========================================
+   Print Styles
+   ========================================== */
+@media print {
+    .header,
+    .footer,
+    .btn,
+    .nav-cards {
+        display: none;
+    }
+
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    .page {
+        display: block !important;
+    }
+
+    .info-card,
+    .question-card {
+        page-break-inside: avoid;
+    }
+}
+
+/* ==========================================
+   Accessibility - Reduced Motion
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ==========================================
+   Dark Mode Support (Optional)
+   ========================================== */
+@media (prefers-color-scheme: dark) {
+    /* Uncomment to enable dark mode
+    :root {
+        --color-bg: #1e293b;
+        --color-bg-card: #334155;
+        --color-text: #f1f5f9;
+        --color-text-light: #cbd5e1;
+        --color-border: #475569;
+    }
+    */
+}
+
+/* ==========================================
+   Touch Device Optimizations
+   ========================================== */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets for mobile */
+    .btn,
+    .option-btn,
+    .choice-btn,
+    .tab-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Remove hover effects on touch devices */
+    .nav-card:hover,
+    .option-btn:hover,
+    .choice-btn:hover {
+        transform: none;
+    }
+
+    /* Add active states instead */
+    .nav-card:active {
+        transform: scale(0.98);
+    }
+
+    .btn:active,
+    .option-btn:active,
+    .choice-btn:active {
+        transform: scale(0.95);
+    }
+}
+
+
+/* ==========================================
+   YENİ ANA SAYFA - RESPONSIVE TASARIM
+   ========================================== */
+
+/* Tablet ve Küçük Ekranlar */
+@media (max-width: 1024px) {
+    .hero-modern {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        padding: 3rem 0 2rem;
+    }
+
+    .hero-main-title {
+        font-size: 3rem;
+    }
+
+    .hero-visual-modern {
+        height: 400px;
+    }
+
+    .floating-card {
+        padding: 1.5rem;
+    }
+
+    .floating-card.card-1,
+    .floating-card.card-2,
+    .floating-card.card-3 {
+        width: 240px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+    }
+
+    .section-title {
+        font-size: 2.25rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-modern {
+        padding: 2.5rem 0 2rem;
+        margin-bottom: 4rem;
+        gap: 3rem;
+    }
+
+    .hero-main-title {
+        font-size: 2.25rem;
+        letter-spacing: -0.75px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 0.875rem;
+    }
+
+    .cta-primary,
+    .cta-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 1.75rem;
+    }
+
+    .hero-stats-modern {
+        flex-direction: column;
+        gap: 1.25rem;
+        padding: 1.25rem 1.5rem;
+        width: 100%;
+    }
+
+    .stat-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .stat-item-modern {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-visual-modern {
+        height: auto;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: center;
+        justify-content: center;
+        padding: var(--spacing-md) 0;
+    }
+
+    /* Floating cards mobilde dikey sıralı ve görünür */
+    .floating-card {
+        padding: 1.25rem !important;
+        position: relative !important;
+        width: 100% !important;
+        max-width: 320px;
+        margin: 0 !important;
+        animation: floatMobile 4s ease-in-out infinite !important;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .floating-card.card-1 {
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        animation-delay: 0s;
+    }
+
+    .floating-card.card-2 {
+        top: auto !important;
+        right: auto !important;
+        transform: none !important;
+        display: block !important;
+        animation-delay: 0.5s;
+    }
+
+    .floating-card.card-3 {
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+        display: block !important;
+        animation-delay: 1s;
+    }
+
+    /* Mobil için yumuşak animasyon */
+    @keyframes floatMobile {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    /* Touch cihazlar için active state */
+    .floating-card:active {
+        transform: translateY(-5px) scale(0.98) !important;
+        box-shadow: 0 12px 40px rgba(99, 102, 241, 0.25) !important;
+        border-color: rgba(99, 102, 241, 0.5) !important;
+    }
+
+    .floating-card:active .card-glow {
+        opacity: 1 !important;
+    }
+
+    .floating-card:active .card-icon-modern {
+        transform: scale(1.1) rotate(-5deg) !important;
+    }
+
+    /* Sleeping dragon mobilde küçük ama görünür */
+    .sleeping-dragon {
+        display: block !important;
+        width: 100px;
+        height: 100px;
+        top: 10px;
+        right: 10px;
+        opacity: 0.5;
+    }
+
+    .card-icon-modern {
+        font-size: 2.25rem;
+    }
+
+    .card-content-modern h4 {
+        font-size: 1.0625rem;
+    }
+
+    .card-content-modern p {
+        font-size: 0.875rem;
+    }
+
+    .features-section {
+        margin-bottom: 3rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-description {
+        font-size: 1rem;
+    }
+
+    /* Features grid */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .feature-icon-wrapper {
+        width: 64px;
+        height: 64px;
+    }
+
+    .feature-icon {
+        font-size: 2rem;
+    }
+
+    .feature-title {
+        font-size: 1.25rem;
+    }
+
+    .feature-description {
+        font-size: 0.9375rem;
+    }
+
+    .feature-list li {
+        font-size: 0.875rem;
+    }
+
+    .why-section {
+        padding: 2.5rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .why-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .why-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .why-text strong {
+        font-size: 1rem;
+    }
+
+    .why-text p {
+        font-size: 0.9375rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .hero-main-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-label {
+        font-size: 0.8125rem;
+        padding: 0.375rem 0.875rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9375rem;
+    }
+
+    .stat-badge strong {
+        font-size: 1.5rem;
+    }
+
+    .stat-badge span {
+        font-size: 0.8125rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .section-description {
+        font-size: 0.9375rem;
+    }
+
+    .feature-card {
+        padding: 1.25rem;
+    }
+
+    .feature-icon-wrapper {
+        width: 56px;
+        height: 56px;
+    }
+
+    .feature-icon {
+        font-size: 1.75rem;
+    }
+
+    .feature-title {
+        font-size: 1.125rem;
+    }
+
+    .why-title {
+        font-size: 1.75rem;
+    }
+
+    .why-section {
+        padding: 2rem 1rem;
+    }
+
+    /* Küçük ekranlarda da hero görselleri (DNA kartları) görünsün */
+    .hero-visual-modern {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 350px;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md) 0;
+    }
+
+    /* Tüm floating kartları göster ve dikey sırala */
+    .floating-card {
+        max-width: 280px;
+        width: 100% !important;
+        padding: 1rem !important;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        margin: 0 auto !important;
+        animation: floatMobile 4s ease-in-out infinite !important;
+        display: block !important;
+    }
+
+    .floating-card.card-1 {
+        animation-delay: 0s;
+    }
+
+    .floating-card.card-2 {
+        display: block !important;
+        animation-delay: 0.5s;
+    }
+
+    .floating-card.card-3 {
+        display: block !important;
+        animation-delay: 1s;
+    }
+
+    /* Mobil için yumuşak animasyon */
+    @keyframes floatMobile {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-8px);
+        }
+    }
+
+    /* Touch için active state */
+    .floating-card:active {
+        transform: translateY(-4px) scale(0.97) !important;
+        animation-play-state: paused !important;
+        box-shadow: 0 12px 40px rgba(99, 102, 241, 0.3) !important;
+    }
+
+    /* Footer küçük ekranlarda */
+    .footer {
+        padding: var(--spacing-md) 0;
+    }
+
+    .footer-content {
+        padding: 0 var(--spacing-sm);
+        gap: var(--spacing-md);
+    }
+
+    .footer-section {
+        padding: var(--spacing-sm);
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    .footer-section h4 {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .footer-section p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    .footer-links {
+        margin-top: var(--spacing-xs);
+    }
+
+    .footer-links a {
+        font-size: 0.85rem;
+        padding: var(--spacing-xs);
+    }
+
+    .footer-bottom {
+        padding: var(--spacing-sm) var(--spacing-sm) 0;
+    }
+
+    .footer-bottom p {
+        font-size: 0.75rem;
+    }
+
+    /* Dragon SVG (uyuyan ejderha) küçük ama görünür olsun */
+    .sleeping-dragon {
+        width: 120px;
+        height: 120px;
+        right: 10px;
+        top: 10px;
+        opacity: 0.6;
+        display: block;
+    }
+}
+
+/* Landscape Mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero-modern {
+        padding: 1.5rem 0;
+        margin-bottom: 2rem;
+    }
+
+    .hero-main-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-stats {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .features-section {
+        margin-bottom: 2rem;
+    }
+
+    .why-section {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+    .hero-modern {
+        gap: 5rem;
+        padding: 5rem 0 4rem;
+    }
+
+    .hero-main-title {
+        font-size: 4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .why-section {
+        padding: 5rem 3rem;
+    }
+}
+
+
+/* ==========================================
+   DİL SEÇİCİ MOBİL OPTİMİZASYONU
+   ========================================== */
+
+@media (max-width: 768px) {
+    /* Dil seçici butonları mobilde */
+    .language-selector {
+        gap: 4px;
+        padding: 3px;
+    }
+
+    .lang-btn,
+    .btn-lang {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Header actions mobilde daha kompakt */
+    .header-actions {
+        gap: 6px;
+    }
+
+    /* Logo mobilde daha küçük */
+    .logo {
+        font-size: 1rem;
+    }
+
+    .logo span {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .language-selector {
+        gap: 3px;
+        padding: 2px;
+    }
+
+    .lang-btn,
+    .btn-lang {
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
+        padding: 0;
+    }
+
+    .btn-theme {
+        width: 34px;
+        height: 34px;
+    }
+
+    .theme-icon {
+        font-size: 1rem;
+    }
+
+    .header-actions {
+        gap: 4px;
+    }
+}
+
+@media (max-width: 360px) {
+    .language-selector {
+        gap: 2px;
+        padding: 2px;
+    }
+
+    .lang-btn,
+    .btn-lang {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+
+    .btn-theme {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo {
+        font-size: 0.9rem;
+    }
+
+    .logo span {
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================
+   BADGE BİLDİRİMİ MOBİL OPTİMİZASYONU
+   ========================================== */
+
+@media (max-width: 768px) {
+    .badge-notification {
+        width: calc(100% - 32px);
+        max-width: 400px;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        margin: 0 auto;
+    }
+
+    .badge-notification-content {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+
+    .badge-notification-icon {
+        font-size: 3rem;
+    }
+
+    .badge-notification-text h4 {
+        font-size: 1.125rem;
+    }
+
+    .badge-notification-text p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ==========================================
+   FEEDBACK MESAJLARI MOBİL OPTİMİZASYONU
+   ========================================== */
+
+@media (max-width: 768px) {
+    .feedback {
+        padding: var(--spacing-md);
+        margin-top: var(--spacing-md);
+    }
+
+    .feedback-title {
+        font-size: 1.125rem;
+    }
+
+    .feedback-text {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+}
+
+/* ==========================================
+   TİMELİNE MOBİL İYİLEŞTİRMELERİ
+   ========================================== */
+
+@media (max-width: 768px) {
+    .timeline-selector {
+        padding: var(--spacing-md);
+    }
+
+    .timeline-selector label {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    #diseaseSelect {
+        font-size: 0.9rem;
+        padding: var(--spacing-sm);
+        min-height: 44px; /* Touch target */
+    }
+
+    .timeline-warning {
+        padding: var(--spacing-md);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .timeline-empty {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .timeline-empty p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-stage {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .timeline-info h3 {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .timeline-info h4 {
+        font-size: 0.8125rem;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .timeline-info p {
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+
+    .timeline-info ul {
+        font-size: 0.8125rem;
+        padding-left: var(--spacing-md);
+    }
+
+    .timeline-info ul li {
+        margin-bottom: var(--spacing-xs);
+    }
+}
+
+/* ==========================================
+   TABS MOBİL İYİLEŞTİRMELERİ
+   ========================================== */
+
+@media (max-width: 768px) {
+    .tabs {
+        padding: 0;
+        margin-bottom: var(--spacing-md);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+    }
+
+    .tabs::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
+
+    .tab-btn {
+        white-space: nowrap;
+        flex-shrink: 0;
+        min-width: auto;
+        padding: var(--spacing-xs) var(--spacing-md);
+    }
+
+    .tab-btn.active {
+        border-bottom-width: 3px;
+    }
+}
+
+/* ==========================================
+   QUIZ NAVİGASYON MOBİL İYİLEŞTİRMELERİ
+   ========================================== */
+
+@media (max-width: 768px) {
+    .quiz-navigation {
+        display: flex;
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-md);
+    }
+
+    .quiz-navigation .btn {
+        flex: 1;
+        min-height: 44px;
+        font-size: 0.9rem;
+    }
+
+    #prevQuestionBtn,
+    #nextQuestionBtn {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-navigation {
+        flex-direction: column;
+    }
+
+    .quiz-navigation .btn {
+        width: 100%;
+    }
+}
+
+/* ==========================================
+   SENARYO KARTLARI MOBİL İYİLEŞTİRMELERİ
+   ========================================== */
+
+@media (max-width: 768px) {
+    .scenario-card {
+        padding: var(--spacing-md);
+    }
+
+    .scenario-card h3 {
+        font-size: 1.125rem;
+        line-height: 1.4;
+    }
+
+    .scenario-icon {
+        font-size: 2rem;
+    }
+
+    .scenario-difficulty {
+        font-size: 0.8125rem;
+        padding: 4px 10px;
+    }
+
+    .scenario-card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .scenario-card button {
+        min-height: 44px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ==========================================
+   PROGRESS KARTLARI MOBİL İYİLEŞTİRMELERİ
+   ========================================== */
+
+@media (max-width: 768px) {
+    .progress-card {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .progress-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* İstatistik kartları mobilde 2 sütun */
+    .progress-card > div[style*="display: grid"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: var(--spacing-sm) !important;
+    }
+
+    /* Rozet grid'i mobilde 3 sütun */
+    .badges-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .badge {
+        padding: var(--spacing-sm);
+    }
+
+    .badge-icon {
+        font-size: 2.5rem;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .badge-name {
+        font-size: 0.8125rem;
+        line-height: 1.3;
+    }
+
+    .badge-description {
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Küçük ekranlarda rozetler 2 sütun */
+    .badges-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .badge {
+        padding: var(--spacing-xs);
+    }
+
+    .badge-icon {
+        font-size: 2rem;
+    }
+
+    .badge-name {
+        font-size: 0.75rem;
+    }
+
+    .badge-description {
+        font-size: 0.6875rem;
+    }
+}
+
+/* ==========================================
+   GENEL MOBİL İYİLEŞTİRMELER
+   ========================================== */
+
+@media (max-width: 768px) {
+    /* Tüm butonlar touch-friendly */
+    button,
+    .btn,
+    a.btn {
+        min-height: 44px;
+        min-width: 44px;
+        -webkit-tap-highlight-color: rgba(99, 102, 241, 0.2);
+    }
+
+    /* Input alanları touch-friendly */
+    input,
+    select,
+    textarea {
+        min-height: 44px;
+        font-size: 16px; /* iOS zoom'u önlemek için */
+    }
+
+    /* Kartlar arası boşluklar */
+    .info-card,
+    .question-card,
+    .scenario-card,
+    .feature-card {
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* Scroll bar gizle ama scroll çalışsın */
+    .tabs,
+    .quiz-navigation {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .tabs::-webkit-scrollbar,
+    .quiz-navigation::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Safe area için padding (iPhone notch) */
+    .header {
+        padding-left: max(var(--spacing-md), env(safe-area-inset-left));
+        padding-right: max(var(--spacing-md), env(safe-area-inset-right));
+    }
+
+    .footer {
+        padding-left: max(var(--spacing-md), env(safe-area-inset-left));
+        padding-right: max(var(--spacing-md), env(safe-area-inset-right));
+        padding-bottom: max(var(--spacing-md), env(safe-area-inset-bottom));
+    }
+
+    /* Container padding */
+    .container {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+}
+
+/* ==========================================
+   PERFORMANS OPTİMİZASYONLARI
+   ========================================== */
+
+@media (max-width: 768px) {
+    /* Ağır animasyonları mobilde azalt */
+    .animate-fadeIn,
+    .animate-slideInRight,
+    .animate-scaleIn {
+        animation-duration: 0.3s !important;
+    }
+
+    /* Blur efektlerini mobilde azalt */
+    .glass-effect {
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+    }
+
+    /* Shadow'ları mobilde hafiflet */
+    .card-shadow,
+    .info-card,
+    .question-card,
+    .scenario-card {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    }
+}
+
+/* ==========================================
+   LANDSCAPE MOBİL OPTİMİZASYONLARI
+   ========================================== */
+
+@media (max-height: 600px) and (orientation: landscape) and (max-width: 900px) {
+    /* Hero bölümü landscape'de daha kompakt */
+    .hero-modern {
+        padding: 2rem 0 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-main-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .hero-stats-modern {
+        padding: 0.75rem 1rem;
+    }
+
+    /* Floating cards landscape'de yan yana */
+    .hero-visual-modern {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        min-height: auto;
+        padding: var(--spacing-sm) 0;
+    }
+
+    .floating-card {
+        max-width: 200px;
+        padding: 0.875rem !important;
+    }
+
+    /* Sections daha kompakt */
+    .features-section,
+    .why-section {
+        margin-bottom: 2rem;
+        padding: 2rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Footer landscape'de kompakt */
+    .footer {
+        padding: 1.5rem 0 1rem;
+    }
+
+    .footer-content {
+        gap: 1rem;
+    }
+}
+
+/* ==========================================
+   VERY SMALL SCREENS (< 360px)
+   ========================================== */
+
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+
+    .hero-main-title {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .feature-card,
+    .info-card,
+    .scenario-card {
+        padding: 1rem;
+    }
+
+    .badges-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xs);
+    }
+
+    .badge {
+        padding: var(--spacing-xs);
+    }
+
+    .badge-icon {
+        font-size: 1.75rem;
+    }
+
+    .badge-name {
+        font-size: 0.6875rem;
+    }
+
+    .floating-card {
+        max-width: 260px;
+        padding: 0.875rem !important;
+    }
+
+    .card-icon-modern {
+        font-size: 2rem;
+    }
+
+    .card-content-modern h4 {
+        font-size: 0.9375rem;
+    }
+
+    .card-content-modern p {
+        font-size: 0.8125rem;
+    }
+}
+
+
+/* ==========================================
+   MOBİL OVERFLOW FIX - TÜM EKRANLAR
+   ========================================== */
+@media (max-width: 768px) {
+    /* Tüm elementlerin genişliğini kontrol et */
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Grid ve flex container'lar */
+    .features-grid,
+    .info-grid,
+    .nav-cards,
+    .scenario-selection,
+    .badges-grid,
+    .why-grid,
+    .quick-stats {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Tüm kartlar */
+    .feature-card,
+    .info-card,
+    .nav-card,
+    .scenario-card,
+    .floating-card,
+    .question-card,
+    .quiz-results,
+    .progress-card {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    /* Hero bölümü */
+    .hero,
+    .hero-modern,
+    .hero-content,
+    .hero-visual-modern {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    /* Sections */
+    .features-section,
+    .why-section {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        padding-left: 12px;
+        padding-right: 12px;
+        box-sizing: border-box;
+    }
+
+    /* Footer */
+    .footer,
+    .footer-content {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    /* Butonlar ve form elemanları */
+    .btn,
+    button,
+    input,
+    select,
+    textarea {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Resimler ve medya */
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Tablolar */
+    table {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+
+    /* Pre ve code blokları */
+    pre,
+    code {
+        max-width: 100%;
+        overflow-x: auto;
+        word-wrap: break-word;
+    }
+}
+
+/* Çok küçük ekranlar için ekstra kontrol */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 8px;
+    }
+
+    .hero-modern {
+        padding: 1.5rem 8px 1rem;
+    }
+
+    .features-section,
+    .why-section {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
