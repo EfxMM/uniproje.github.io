@@ -550,7 +550,7 @@ function changeLanguage(lang) {
         localStorage.setItem('selectedLanguage', lang);
         
         // Quiz manager'ı yeniden başlat (eğer varsa)
-        if (typeof quizManager !== 'undefined') {
+        if (typeof quizManager !== 'undefined' && typeof getQuizData !== 'undefined') {
             quizManager.questions = [...getQuizData()];
             // Eğer quiz aktifse, başa dön
             if (!document.getElementById('quizStart').classList.contains('hidden')) {
@@ -564,7 +564,7 @@ function changeLanguage(lang) {
         }
         
         // Scenario manager'ı yeniden başlat (eğer varsa)
-        if (typeof scenarioManager !== 'undefined') {
+        if (typeof scenarioManager !== 'undefined' && typeof getScenariosData !== 'undefined') {
             scenarioManager.scenarios = [...getScenariosData()];
             // Eğer senaryo aktifse, seçim ekranına dön
             if (document.getElementById('scenariosPage').classList.contains('active')) {
@@ -793,7 +793,8 @@ function getTranslation(key) {
 }
 
 // Sayfa yüklendiğinde dil ayarını uygula
-document.addEventListener('DOMContentLoaded', () => {
+// window.addEventListener('load') kullanarak tüm scriptlerin yüklenmesini bekle
+window.addEventListener('load', () => {
     const savedLang = localStorage.getItem('selectedLanguage') || 'tr';
     changeLanguage(savedLang);
     
