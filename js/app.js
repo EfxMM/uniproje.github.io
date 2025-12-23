@@ -481,18 +481,6 @@ class ThemeManager {
 const themeManager = new ThemeManager();
 
 // ==========================================
-// Header Scroll Effect
-// ==========================================
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 20) {
-        header?.classList.add('scrolled');
-    } else {
-        header?.classList.remove('scrolled');
-    }
-});
-
-// ==========================================
 // Mobil Cihaz Uyarısı
 // ==========================================
 function checkMobileAndShowWarning() {
@@ -559,11 +547,23 @@ function closeDesktopWarning() {
 window.closeDesktopWarning = closeDesktopWarning;
 
 // ==========================================
+// Header Scroll Effect
+// ==========================================
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 20) {
+        header?.classList.add('scrolled');
+    } else {
+        header?.classList.remove('scrolled');
+    }
+});
+
+// ==========================================
 // Event Listeners ve Başlangıç
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobil cihaz kontrolü ve uyarı göster
+    // Mobil cihaz kontrolü ve uyarı
     checkMobileAndShowWarning();
     
     // Dil değiştirme butonları
@@ -897,7 +897,7 @@ style.textContent = `
             }
         }
     }
-
+    
     /* Desktop Warning Styles */
     .desktop-warning {
         position: fixed;

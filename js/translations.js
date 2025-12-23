@@ -257,6 +257,11 @@ const translations = {
         badgeNewBadge: "Yeni Rozet Kazandın!",
         badgeEarnedPrefix: "rozet kazanıldı",
         
+        // HTML Meta Tags
+        metaDescription: "Cinsel yolla bulaşan enfeksiyonlar (CYBE) hakkında eğitici interaktif oyun ve bilgi platformu",
+        metaKeywords: "CYBE, cinsel sağlık, korunma, eğitim, asepsi, mikrobiyoloji",
+        metaTitle: "CYBE Eğitim Oyunu - Sağlıklı Yaşam İçin Bilgilenin",
+        
         // Desktop Warning
         desktopWarningTitle: "Daha İyi Deneyim",
         desktopWarningMessage: "Bu site bilgisayarda daha iyi bir deneyim sunar. Daha fazla özellik ve daha rahat kullanım için masaüstü tarayıcınızdan ziyaret edin.",
@@ -517,6 +522,11 @@ const translations = {
         badgeNewBadge: "New Badge Earned!",
         badgeEarnedPrefix: "badges earned",
         
+        // HTML Meta Tags
+        metaDescription: "Interactive educational game and information platform about sexually transmitted infections (STIs)",
+        metaKeywords: "STI, sexual health, protection, education, asepsis, microbiology",
+        metaTitle: "STI Education Game - Get Informed for a Healthy Life",
+        
         // Desktop Warning
         desktopWarningTitle: "Better Experience",
         desktopWarningMessage: "This site offers a better experience on desktop. Visit from your desktop browser for more features and easier use.",
@@ -550,7 +560,7 @@ function changeLanguage(lang) {
         localStorage.setItem('selectedLanguage', lang);
         
         // Quiz manager'ı yeniden başlat (eğer varsa)
-        if (typeof quizManager !== 'undefined' && typeof getQuizData !== 'undefined') {
+        if (typeof quizManager !== 'undefined') {
             quizManager.questions = [...getQuizData()];
             // Eğer quiz aktifse, başa dön
             if (!document.getElementById('quizStart').classList.contains('hidden')) {
@@ -564,7 +574,7 @@ function changeLanguage(lang) {
         }
         
         // Scenario manager'ı yeniden başlat (eğer varsa)
-        if (typeof scenarioManager !== 'undefined' && typeof getScenariosData !== 'undefined') {
+        if (typeof scenarioManager !== 'undefined') {
             scenarioManager.scenarios = [...getScenariosData()];
             // Eğer senaryo aktifse, seçim ekranına dön
             if (document.getElementById('scenariosPage').classList.contains('active')) {
@@ -606,6 +616,11 @@ function changeLanguage(lang) {
 
 // Statik içerikleri güncelle
 function updateStaticContent(t) {
+    
+    // Meta Tags
+    document.querySelector('meta[name="description"]')?.setAttribute('content', t.metaDescription);
+    document.querySelector('meta[name="keywords"]')?.setAttribute('content', t.metaKeywords);
+    document.querySelector('title').textContent = t.metaTitle;
     
     // Header
     document.querySelector('.logo').textContent = t.logo;
@@ -793,8 +808,7 @@ function getTranslation(key) {
 }
 
 // Sayfa yüklendiğinde dil ayarını uygula
-// window.addEventListener('load') kullanarak tüm scriptlerin yüklenmesini bekle
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('selectedLanguage') || 'tr';
     changeLanguage(savedLang);
     
