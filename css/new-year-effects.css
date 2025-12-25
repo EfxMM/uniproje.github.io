@@ -1,0 +1,433 @@
+/* ==========================================
+   Yeni Yıl Efektleri - Kar Yağışı ve LED Lambalar
+   ========================================== */
+
+/* ==========================================
+   LED Lambalar Container
+   ========================================== */
+.led-lights-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; /* Üstten hizalama */
+    padding: 0 20px;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, transparent 100%);
+}
+
+/* LED Lamba */
+.led-light {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s ease;
+    opacity: 0.3;
+    /* top değeri JS'den gelecek */
+}
+
+.led-light::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1px;
+}
+
+.led-light.active {
+    opacity: 1;
+    transform: scale(1.3);
+    box-shadow: 0 0 25px currentColor,
+                0 0 50px currentColor,
+                0 0 75px currentColor,
+                0 0 100px currentColor;
+    animation: ledPulse 0.5s ease-in-out;
+}
+
+@keyframes ledPulse {
+    0%, 100% {
+        transform: scale(1.3);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+}
+
+/* LED Renkleri */
+.led-light.red {
+    background: #ff0000;
+    color: #ff0000;
+}
+
+.led-light.green {
+    background: #00ff00;
+    color: #00ff00;
+}
+
+.led-light.blue {
+    background: #0066ff;
+    color: #0066ff;
+}
+
+.led-light.yellow {
+    background: #ffff00;
+    color: #ffff00;
+}
+
+.led-light.purple {
+    background: #ff00ff;
+    color: #ff00ff;
+}
+
+.led-light.orange {
+    background: #ff8800;
+    color: #ff8800;
+}
+
+.led-light.cyan {
+    background: #00ffff;
+    color: #00ffff;
+}
+
+.led-light.pink {
+    background: #ff69b4;
+    color: #ff69b4;
+}
+
+/* ==========================================
+   Kar Yağışı Container
+   ========================================== */
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+    overflow: hidden;
+}
+
+/* Kar Tanesi */
+.snowflake {
+    position: absolute;
+    top: -20px;
+    color: #fff;
+    font-size: 1em;
+    user-select: none;
+    pointer-events: none;
+    animation: snowfall linear infinite;
+}
+
+/* Dark tema için kar rengi */
+[data-theme="dark"] .snowflake {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8),
+                 0 0 15px rgba(255, 255, 255, 0.6),
+                 0 0 25px rgba(255, 255, 255, 0.4);
+}
+
+/* Light tema için kar rengi */
+[data-theme="light"] .snowflake {
+    color: #d0d0d0;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2),
+                 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Kar Düşme Animasyonu */
+@keyframes snowfall {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) translateX(var(--drift)) rotate(360deg);
+    }
+}
+
+/* ==========================================
+   Efekt Toggle Butonu
+   ========================================== */
+.effects-toggle {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 10000;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.effects-toggle:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.effects-toggle.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.effects-toggle .icon {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.effects-toggle:hover .icon {
+    transform: rotate(20deg);
+}
+
+/* ==========================================
+   Responsive Tasarım
+   ========================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .led-lights-container {
+        height: 35px;
+        padding: 0 15px;
+    }
+    
+    .led-light {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .effects-toggle {
+        width: 45px;
+        height: 45px;
+        top: 75px;
+        right: 15px;
+    }
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+    .led-lights-container {
+        height: 30px;
+        padding: 0 10px;
+    }
+    
+    .led-light {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .led-light::before {
+        width: 1.5px;
+        height: 6px;
+    }
+    
+    .effects-toggle {
+        width: 40px;
+        height: 40px;
+        top: 70px;
+        right: 10px;
+    }
+    
+    .effects-toggle .icon {
+        font-size: 20px;
+    }
+    
+    /* Mobilde daha az kar tanesi için */
+    .snowflake {
+        font-size: 0.8em;
+    }
+}
+
+/* Küçük mobil */
+@media (max-width: 480px) {
+    .led-lights-container {
+        height: 25px;
+    }
+    
+    .led-light {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .effects-toggle {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* ==========================================
+   Performans Optimizasyonları
+   ========================================== */
+
+/* GPU hızlandırma */
+.snowflake,
+.led-light,
+.effects-toggle {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Animasyon performansı */
+@media (prefers-reduced-motion: reduce) {
+    .snowflake,
+    .led-light {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* ==========================================
+   Gizli/Görünür Durumlar
+   ========================================== */
+.snow-container.hidden,
+.led-lights-container.hidden {
+    display: none;
+}
+
+.effects-toggle.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ==========================================
+   Yükleme Animasyonu
+   ========================================== */
+@keyframes fadeInEffect {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.led-lights-container,
+.effects-toggle {
+    animation: fadeInEffect 0.5s ease-out;
+}
+
+/* ==========================================
+   Özel Kar Şekilleri
+   ========================================== */
+.snowflake::before {
+    content: '❄';
+}
+
+/* Alternatif kar şekilleri */
+.snowflake.style-1::before {
+    content: '❅';
+}
+
+.snowflake.style-2::before {
+    content: '❆';
+}
+
+.snowflake.style-3::before {
+    content: '✻';
+}
+
+.snowflake.style-4::before {
+    content: '✼';
+}
+
+.snowflake.style-5::before {
+    content: '❉';
+}
+
+
+/* ==========================================
+   Kar Adam - Kartların Üstünde
+   ========================================== */
+.card-snowman {
+    position: absolute;
+    top: -25px;
+    right: 15px;
+    font-size: 32px;
+    z-index: 100;
+    animation: snowmanBounce 2s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.floating-card.card-2 .card-snowman {
+    right: auto;
+    left: 15px;
+}
+
+.floating-card.card-3 .card-snowman {
+    right: 50%;
+    transform: translateX(50%);
+}
+
+@keyframes snowmanBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.floating-card.card-3 .card-snowman {
+    animation: snowmanBounce3 2s ease-in-out infinite;
+}
+
+@keyframes snowmanBounce3 {
+    0%, 100% {
+        transform: translateX(50%) translateY(0);
+    }
+    50% {
+        transform: translateX(50%) translateY(-5px);
+    }
+}
+
+.floating-card:hover .card-snowman {
+    animation: snowmanWave 0.5s ease-in-out infinite;
+}
+
+@keyframes snowmanWave {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+.floating-card.card-3:hover .card-snowman {
+    animation: snowmanWave3 0.5s ease-in-out infinite;
+}
+
+@keyframes snowmanWave3 {
+    0%, 100% {
+        transform: translateX(50%) rotate(-5deg);
+    }
+    50% {
+        transform: translateX(50%) rotate(5deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card-snowman {
+        font-size: 24px;
+        top: -20px;
+    }
+}
